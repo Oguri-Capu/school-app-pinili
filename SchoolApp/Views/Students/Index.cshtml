@@ -9,6 +9,18 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+@* Option A: search with a button *@
+@* method="get" puts the search text in the address bar *@
+@* Option A: search with a button *@
+@* method="get" puts the search text in the address bar *@
+<form asp-action="Index" method="get" class="mb-3">
+    @* name="searchString" must match the controller's parameter name *@
+    <input type="text" name="searchString" value="@ViewData["searchString"]"
+           placeholder="Name, student no. or email - Bowen" />
+    <button type="submit" class="btn btn-primary">Search</button>
+    @* Clear goes back to /Students with no search, so all rows show *@
+    <a asp-action="Index" class="btn btn-secondary">Clear</a>
+</form>
 <table class="table">
     <thead>
         <tr>
